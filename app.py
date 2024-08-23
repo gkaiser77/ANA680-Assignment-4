@@ -27,7 +27,7 @@ def predict():
     Normal_nucleoli       = float(request.form['Normal_nucleoli'])
     Mitoses       = float(request.form['Mitoses'])
 
-    features = np.array([[Clump_thickness, Uniformity_of_cell_size, Uniformity_of_cell_shape,Uniformity_of_cell_shape,Marginal_adhesion,
+    features = np.array([[Clump_thickness, Uniformity_of_cell_size, Uniformity_of_cell_shape,Marginal_adhesion,
                          Single_epithelial_cell_size,Bare_nuclei,Bland_chromatin,Normal_nucleoli,Mitoses]])
     prediction = model.predict(features)
     return f'Predicted benign (label = 0) or malignant (label = 1) code: {prediction[0]}'
